@@ -13,10 +13,7 @@ let firstNumber = 1; //숫자 시작점
 let lastNumber = 5; //숫자 종료점
 
 window.onload = async () => {
-
-  database = (await fetchJson(config.originUrl.restaurant, 110)).filter(
-    (el) => el.images?.length >= 1
-  );
+  database = (await fetchJson(config.originUrl.asset, 10)).filter(el => el.images?.length >=1 );
   console.log(database);
 
   document.getElementById("allCount").innerHTML = database.length;

@@ -1,59 +1,13 @@
-import { config } from "./config.js";
-import { fetchJson } from "./data.js";
-
-let database = [];
-
-let limit = 5;
-let pageCount = 5;
-
-let currentPage = 1; //현재 페이지
-let totalPage = 0; //총 페이지 수
-let pageGroup = 0; //페이지 그룹 수
-let firstNumber = 1; //숫자 시작점
-let lastNumber = 5; //숫자 종료점
-
-window.onload = async () => {
-
-  database = (await fetchJson(config.originUrl.restaurant, 110)).filter(
-    (el) => el.images?.length >= 1
-  );
-  console.log(database);
-
-  document.getElementById("allCount").innerHTML = database.length;
-
-  document.getElementById("limitSize").addEventListener("change", (e) => {
-    limitSizeOnChange(e.target.value);
-  });
-
-  document.getElementById("pagingSize").addEventListener("change", (e) => {
-    pagingSizeonChange(e.target.value);
-  });
-
-  //시작번호와 종료번호 계산하기
-  updateFirstlast(1);
-
-  //이걸 토대로 버튼 만들기
-  setPageButtons();
-
-  //만들어진 숫자 버튼에다 이벤트 달기
-  addNumberButtonListner();
-
-  //이전, 이후 버튼 이벤트
-  addMovingButtonListner();
-
-  setPageOf(1);
-};
-
 //지정된 페이지에서
 //시작점 종료점 계산
 function updateFirstlast(targetPage) {
   console.log(`지금 보고있는 페이지 ${targetPage}`);
   currentPage = targetPage;
   //페이지 마다 최대 게시글 개수
-  limit = parseInt(document.getElementById("limitSize").value);
+  const limit = parseInt(document.getElementById("limitSize").value);
 
   //페이지 버튼 몇개식 볼거냐
-  pageCount = parseInt(document.getElementById("pagingSize").value);
+  const pageCount = parseInt(document.getElementById("pagingSize").value);
 
   //총 페이지 수
   totalPage = Math.ceil(database.length / limit);
@@ -103,7 +57,7 @@ function addNumberButtonListner() {
 
   for (let i = 0; i < pageNumberButtons.length; i++) {
     pageNumberButtons[i].addEventListener("click", onClickNumberButton);
-    pageNumberButtons[i].style.backgroundColor = "whilte";
+    pageNumberButtons[i].style.backgroundColor = "lightsteelblue";
   }
 }
 
@@ -117,7 +71,7 @@ function onClickNumberButton(e) {
 }
 
 function setPageOf(current) {
-  const contentList = document.getElementById("pagination-content");
+  const contentList = document.getElementById("post-content-list");
   //페이지 마다 최대 게시글 개수
   const limitSize = parseInt(document.getElementById("limitSize").value);
 
@@ -133,65 +87,25 @@ function setPageOf(current) {
   console.log(`배열의 시작점 ${start} 종료점 ${end}`);
 
   for (let i = start; i < end; i++) {
-    const imageSrc =
-      database[i].images && database[i].images.length > 0
-        ? database[i].images[0]
-        : "../img/no-image.png";
+    const li = document.createElement("li");
+    li.className = "post-content";
 
-    contentList.innerHTML += `
-    <div class="pagination-content-item">
-      <img src="${imageSrc}" alt="" />
-      <div class="item-details">
-        <div class="item-title">
-          <div class="item-number">${i + 1}</div>
-          <h3 class="item-name"> ${database[i].name} </h3>
-        </div>
-        <div class="item-info">
-          <p>
-            <span>주소 : </span> ${database[i].address}
-          </p>
-          <p>
-            <span>기관 : </span> ${database[i].name}
-          </p>
-          <p>
-            <span>전화번호 : </span> ${database[i].phone}
-          </p>
-        </div>
-      </div>
-      <div class="item-ratings">
-        <div>
-          <p>별점 (총 0개의 후기)</p>
-          <p>☆☆☆☆☆</p>
-          <div class="item-ratings-buttns">
-            <button class="action-btn-blue">스크랩하기</button>
-            <button class="action-btn">길찾기</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    `;
+    li.innerHTML = `
+    <div class="post-container">
+    <h4 class="post-title"> ${database[i].id} </h4>
+    <p class="post-title"> ${database[i].title} </p>
+    </div>`;
 
-    // const li = document.createElement("li");
-    // li.className = "post-content";
-
-    // li.innerHTML = `
-    // <div class="post-container">
-    // <h4 class="post-title"> ${database[i].id} </h4>
-    // <p class="post-title"> ${database[i].title} </p>
-    // </div>`;
-
-    // contentList.appendChild(li);
+    contentList.appendChild(li);
   }
 
   const pageNumberButtons = document.querySelectorAll(".number-button");
   for (let i = 0; i < pageNumberButtons.length; i++) {
-    pageNumberButtons[i].style.backgroundColor = "white";
+    pageNumberButtons[i].style.backgroundColor = "lightsteelblue";
   }
 
   const currentBtn = document.getElementById(`number-button-${current}`);
-
   currentBtn.style.backgroundColor = "red";
-  console.log("끝");
 }
 
 function addMovingButtonListner() {
@@ -243,8 +157,6 @@ function onClickNext(e) {
 }
 
 function limitSizeOnChange(value) {
-  limit = value;
-
   //시작번호와 종료번호 계산하기
   updateFirstlast(1);
 
@@ -261,8 +173,6 @@ function limitSizeOnChange(value) {
 }
 
 function pagingSizeonChange(value) {
-  pageCount = value;
-
   //시작번호와 종료번호 계산하기
   updateFirstlast(1);
 

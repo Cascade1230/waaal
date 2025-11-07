@@ -22,7 +22,7 @@ window.onload = async () => {
 };
 
 function findImgExisted(data) {
-  return data.filter(el => el.images?.length > 1);
+  return data.filter(el => el.images?.length >= 1);
 }
 
 function mainCarousel() {

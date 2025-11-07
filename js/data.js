@@ -7,7 +7,6 @@ export async function fetchJson(originUrl, maxPage) {
     const requestURL = `${config.proxyUrl}${originUrl}?page=${i}&pageunit=10`;
     const response = await fetch(requestURL);
     const jsonData = await response.json();
-    console.log(response);
     for (let i = 0; i < jsonData.results.length; i++) {
       database.push(jsonData.results[i]);
     }
