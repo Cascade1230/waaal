@@ -9,7 +9,9 @@
   position: relative;
 }
 
-.carousel {
+.carousel,
+.taste-cards,
+.healing-carousel {
   display: flex;
   transition-duration: 0.8s;
 }
@@ -49,7 +51,7 @@
   background-image: url("../img/taste.png");
   background-repeat: no-repeat;
   background-position: center;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,6 +61,7 @@
 .taste-title {
   font-size: 28px;
   text-align: center;
+  margin-top: 40px;
   margin-bottom: 40px;
   color: white;
 }
@@ -66,16 +69,19 @@
 .taste-card {
   box-shadow: 5px 5px 20px 0px gray;
 
+  width: 250px;
+
   background-color: white;
 }
 
 .taste-cards-wrapper {
-  width: 1060px;
-  display: flex;
-  gap: 20px;
   overflow: hidden;
+}
+
+.taste-cards {
+  width: 1060px;
+  gap: 20px;
   position: relative;
-  padding: 20px;
 }
 
 .taste-card img {
@@ -84,13 +90,18 @@
   object-fit: cover;
 }
 
-.taste-card .name {
+.name {
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: nowrap;
 }
 
-.taste-card .desc {
+.desc {
   font-size: 13px;
   color: #666;
   height: 30px;
@@ -99,6 +110,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  white-space: nowrap;
 }
 
 .taste-card .location {
@@ -110,4 +122,100 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  white-space: nowrap;
+}
+
+.healing-spots,
+.info-utility {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 40px;
+}
+
+.healing-carousel-wrapper {
+  width: 1280px;
+  height: 328px;
+  overflow: hidden;
+}
+
+.healing-carousel {
+  gap: 27px;
+}
+
+.healing-carousel img {
+  width: 400px;
+  height: 267px;
+}
+
+.healing-card {
+  width: 400px;
+  height: 328;
+}
+
+.notice-area {
+  padding: 30px;
+  border: 1px solid #eee;
+}
+
+.notice-area-top {
+  width: 463px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.notice-area-top button {
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  background-color: white;
+  border: 2px solid #eee;
+}
+
+.notice-area-bottom li {
+  font-size: 15px;
+  padding: 8px 0px;
+  border-bottom: 2px dashed #eee;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notice-area-bottom li:last-child{
+  border-bottom: none;
+}
+
+.utility-area{
+  display: flex;
+  flex-wrap: wrap;
+  width: 545px;
+  gap: 5px;
+  row-gap: 5px;
+}
+
+.utility-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 20px 10px;
+}
+
+.utility-item img {
+  display: flex;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+}
+
+.utility-item > div {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 24px;
 }

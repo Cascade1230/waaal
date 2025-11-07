@@ -1,0 +1,123 @@
+@import url("../css/common.css");
+
+.content-banner {
+  background-image: url("../img/foodBackground.png");
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.content-wrapper {
+  padding: 40px 40px 40px 40px;
+}
+
+.content-title {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  border-bottom: 1px solid gray;
+}
+
+.sns-share img {
+  width: 30px;
+  height: 30px;
+}
+
+.pagination {
+  width: 1200px;
+  max-width: 1200px;
+}
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-top-contant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 14px;
+}
+
+.pagination-top-contant p {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.pagination-top-contant span {
+  color: #ff4100;
+}
+
+.pagination-top-contant select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  height: 50px;
+  display: inline-block;
+}
+
+.pagination-top-filter{
+    padding: 16px 0px;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid gray;
+}
+
+.pagination-top-filter *{
+    margin: 0px 8px;
+}
+
+.pagination-content-item{
+    display: flex;
+}
+
+.pagination-content-item img{
+    width: 300px;
+    height: 200px;
+}
+
+.item-number {
+    background: #c9161e;
+    color: #fff;
+    font-size: 22px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-info span{
+    font-weight: bolder;
+}
+
+.item-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px 0px;
+}
+
+.item-title {
+    display: flex;
+    align-items: center;
+}
+
+.item-ratings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>김해에반해</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/headerFooter.css" />
     <link rel="stylesheet" href="./css/home.css" />
     <script defer src="./js/headerFooter.js"></script>
     <script type="module" defer src="./js/home.js"></script>
@@ -37,84 +37,89 @@
               />
             </li>
           </ul>
-          <button class="carousel-pre-button">
+          <button id="main-carousel-pre-button" class="carousel-pre-button">
             <img src="./img/left-button.png" alt="" />
           </button>
-          <button class="carousel-next-button">
+          <button id="main-carousel-next-button" class="carousel-next-button">
             <img src="./img/right-button.png" alt="" />
           </button>
         </div>
       </section>
       <section class="taste-gimhea">
         <div class="taste-background">
-          <div>
-            <h2 class="taste-title">김해의 '맛'에 빠지다!</h2>
-          </div>
+          <h2 class="taste-title">김해의 '맛'에 빠지다!</h2>
           <div class="taste-card-container">
-            <ul class="taste-cards-wrapper">
-              <li>
-                <div class="taste-card">
-                  <img src="./img/test.png" alt="" />
-                  <div class="taste-info">
-                    <p class="name">제목</p>
-                    <p class="desc">설명</p>
-                    <p class="location">위치</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="taste-card">
-                  <img src="./img/test.png" alt="" />
-                  <div class="taste-info">
-                    <p class="name">제목</p>
-                    <p class="desc">설명</p>
-                    <p class="location">위치</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="taste-card">
-                  <img src="./img/test.png" alt="" />
-                  <div class="taste-info">
-                    <p class="name">제목</p>
-                    <p class="desc">설명</p>
-                    <p class="location">위치</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="taste-card">
-                  <img src="./img/test.png" alt="" />
-                  <div class="taste-info">
-                    <p class="name">제목</p>
-                    <p class="desc">설명</p>
-                    <p class="location">위치</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="taste-card">
-                  <img src="./img/test.png" alt="" />
-                  <div class="taste-info">
-                    <p class="name">제목</p>
-                    <p class="desc">설명</p>
-                    <p class="location">위치</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <div id="taste-cards-wrapper" class="taste-cards-wrapper">
+              <ul id="taste-cards" class="taste-cards"></ul>
+            </div>
           </div>
         </div>
 
-        <button class="carousel-pre-button">
+        <button id="taste-carousel-pre-button" class="carousel-pre-button">
           <img src="./img/left-button.png" alt="" />
         </button>
-        <button class="carousel-next-button">
+        <button id="taste-carousel-next-button" class="carousel-next-button">
           <img src="./img/right-button.png" alt="" />
         </button>
       </section>
-      <section class="healing-spots"></section>
-      <section class="info-utility"></section>
+      <section class="healing-spots">
+        <h2 class="healing-title">힐링 되는 색다른 여행지</h2>
+        <div>
+          <div class="healing-carousel-wrapper">
+            <ul id="healing-carousel" class="healing-carousel"></ul>
+          </div>
+          <button id="healing-carousel-pre-button" class="carousel-pre-button">
+            <img src="./img/left-button.png" alt="" />
+          </button>
+          <button
+            id="healing-carousel-next-button"
+            class="carousel-next-button"
+          >
+            <img src="./img/right-button.png" alt="" />
+          </button>
+        </div>
+      </section>
+      <section class="info-utility">
+        <div class="content-wrapper">
+          <div class="notice-area">
+            <div class="notice-area-top">
+              <h2>공지사항</h2>
+              <button>+</button>
+            </div>
+            <ul class="notice-area-bottom">
+              <li>
+                경남에서 한 달 여행하기 '아름다운 김해' 참가자 모집 (D-day 8)
+              </li>
+              <li>경남에서 한 달 여행하기 '아름다운 김해' 2차 참가자 모집</li>
+              <li>
+                경남에서 한 달 여행하기 '김해에 반해' 참가자 모집 공고(2차)
+              </li>
+              <li>2024년 김해DMZ 관광콘텐츠에 역량강화된 교육 신청 안내</li>
+              <li>
+                경남에서 한 달 여행하기 '김해에 반해' 참가자 모집 공고(2차)
+              </li>
+            </ul>
+          </div>
+          <div class="utility-area">
+            <a href="" class="utility-item" style="background-color: #673ab7;">
+              <div><img src="./img/clock.png" alt="" /></div>
+              <p>종합관광안내소</p>
+            </a>
+            <a href="" class="utility-item" style="background-color: #7943c2;">
+              <div><img src="./img/call.png" alt="" /></div>
+              <p>1330관광안내전화</p>
+            </a>
+            <a href="" class="utility-item" style="background-color: #7e57c2;">
+              <div><img src="./img/map.png" alt="" /></div>
+              <p>관광안내책자</p>
+            </a>
+            <a href="" class="utility-item" style="background-color: #8e6ee8;">
+              <div><img src="./img/QnA.png" alt="" /></div>
+              <p>Q&A</p>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
     <footer id="footer"></footer>
   </body>

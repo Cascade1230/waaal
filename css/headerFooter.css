@@ -90,7 +90,13 @@ div {
 .nav-bottom > ul > li > a{
     padding: 20px;
     color: white;
+    transition-duration: 0.2s;
 }
+
+.nav-bottom > ul > li > a:hover{
+    background-color: #003f8a;
+}
+
 .nav-bottom > ul > li > button {
     background-color: transparent;
     border: 1px solid transparent;
